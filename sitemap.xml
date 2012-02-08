@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://hubcat.github.com/blog/2012/02/07/rails-dependencies/</loc>
+        <lastmod>2012-02-08T09:48:49+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hubcat.github.com/</loc>
+        <lastmod>2012-02-08T09:48:49+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hubcat.github.com/blog/archives/</loc>
+        <lastmod>2012-02-08T09:48:49+08:00</lastmod>
+    </url>
+</urlset>
