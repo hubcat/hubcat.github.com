@@ -6,14 +6,14 @@
 		position: absolute;
 		top: 85px;
 		line-height: 2;
-		font-size: $meta-size;
-		color: $gray02;
+		font-size: 13px;
+		color: $font-meta;
 		width: 170px;
 		a{
-			color: $gray02;
+			color: $font-meta;
 			@include transition(0.3s);
 			&:hover{
-				color: $gray01;
+				color: $font-main;
 			}
 		}
 		.date, .tags, .comments{
@@ -27,23 +27,6 @@
 		}
 		.comments{
 			background: image-url('comments.png') 0 center no-repeat;
-		}
-	}
-}
-
-@media screen and (max-width: 800px){
-	.post{
-		h1.title, .entry{
-			margin-left: 0;
-		}
-		.meta{
-			margin-top: 15px;
-			position: static;
-			width: auto;
-			.date, .tags, .comments{
-				display: inline-block;
-				margin-right: 30px;
-			}
 		}
 	}
 }

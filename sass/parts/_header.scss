@@ -1,10 +1,10 @@
 header{
 	height: 30px;
 	padding: 30px 0;
-	border-bottom: 1px solid $gray04;
+	border-bottom: 1px solid $border;
 	line-height: 30px;
 	a{
-		color: $gray01;
+		color: $font-main;
 		@include transition(0.3s);
 		&:hover{
 			color: $main;
@@ -17,17 +17,20 @@ header{
 	nav{
 		margin-left: 30px;
 		>ul{
+			list-style: none;
+			padding-right: 30px;
 			>li{
-				display: inline-block;
+				float: left;
 				margin-left: 50px;
+				position: relative;
 				&:hover{
 					>a{
 						color: $main;
 					}
 				}
 				>a{
-					padding: 38px 30px 38px 0;
-					margin-top: -38px;
+					padding: 35px 30px 35px 0;
+					margin-top: -35px;
 					background: image-url('detail.png') right center no-repeat;
 					&:only-child{
 						padding-right: 0;
@@ -41,49 +44,34 @@ header{
 				left: -15px;
 				z-index: 10;
 				white-space: nowrap;
-				background: $gray04;
-				border: 1px solid $gray03;
+				background: #ddd;
+				border: 1px solid #ccc;
+				border-radius: 0 0 5px 5px;
+				box-shadow: 0 4px 8px #DDDDDD;
 				list-style: none;
 				display: none;
-				@include box-shadow(0 4px 8px rgba(0,0,0,0.1));
-				@include border-radius(0 0 5px 5px);
-				ul{
-					@include border-radius(0 5px 5px 5px);
-				}
 				li{
-					@include border-shadow($background, $gray03);
+					@include border-shadow(#eee, #ccc);
 					&:hover{
 						background: #d5d5d5;
 					}
 					&:first-of-type{
 						border-top: none;
-						ul{
-							@include border-radius(0 0 5px 5px);
-						}
 					}
 					&:last-of-type{
 						border-bottom: none;
 					}
-					>a{
-						background: image-url('detail-sub.png') right center no-repeat;
+					a{
 						display: block;
-						padding: 5px 30px 5px 15px;
+						padding: 5px 15px;
+						width: 100%;
 						&:hover{
-							color: $gray01;
-						}
-						&:only-child{
-							background: none;
-							padding-right: 15px;
+							color: #666;
 						}
 					}
 				}
-				ul{
-					top: 0;
-					left: 100%;
-				}
 			}
 			li{
-				position: relative;
 				&:hover{
 					>ul{
 						display: block;
@@ -91,26 +79,22 @@ header{
 				}
 			}
 		}
-		select{
-			display: none;
-			margin-bottom: 10px;
-		}
 	}
 	.search{
 		input[type="text"]{
 			background: image-url('search.png') 10px center no-repeat #f2f2f2;
-			color: $gray02;
-			border: 1px solid $gray04;
+			color: #999;
+			border: 1px solid $border;
+			@include border-radius(15px);
 			font: 13px $default;
 			padding: 6px 15px 6px 35px;
 			width: 100px;
 			@include transition(0.3s);
-			@include border-radius(15px);
 			&:focus, &:active{
 				background: image-url('search.png') 10px center no-repeat #fff;
 				width: 150px;
-				border-top: 1px solid $gray03;
-				color: $gray01;
+				border-top: 1px solid #ccc;
+				color: $font-main;
 				outline: none;
 			}
 		}
@@ -128,95 +112,32 @@ header{
 			&:hover{
 				opacity: 1;
 			}
-			&.facebook{
+			&:first-of-type{
 				background: image-url('facebook.png') center no-repeat #3B5998;
 				border: 1px solid #3B5998;
 				&:hover{
 					border: 1px solid darken(#3B5998, 10%);
 				}
 			}
-			&.google{
+			&:nth-of-type(2){
 				background: image-url('google.png') center no-repeat #C83D20;
 				border: 1px solid #C83D20;
 				&:hover{
 					border: 1px solid darken(#C83D20, 10%);
 				}
 			}
-			&.twitter{
+			&:nth-of-type(3){
 				background: image-url('twitter.png') center no-repeat #55CFF8;
 				border: 1px solid #55CFF8;
 				&:hover{
 					border: 1px solid darken(#55CFF8, 10%);
 				}
 			}
-			&.rss{
+			&:last-of-type{
 				background: image-url('rss.png') center no-repeat #EF7522;
 				border: 1px solid #EF7522;
 				&:hover{
 					border: 1px solid darken(#EF7522, 10%);
-				}
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 1030px){
-	header{
-		height: auto;
-		position: relative;
-		padding-bottom: 10px;
-		h1{
-			float: none !important;
-		}
-		nav{
-			margin-left: 0;
-			margin-top: 15px;
-			float: none !important;
-			>ul{
-				>li{
-					margin-left: 0;
-					margin-right: 50px;
-					&:last-of-type{
-						margin-right: 0;
-					}
-					>a{
-						padding: 18px 30px 18px 0;
-						&:only-child{
-							padding-right: 0;
-						}
-					}
-				}
-				ul{
-					top: 40px;
-				}
-			}
-		}
-		>.right{
-			position: absolute;
-			top: 30px;
-			right: 0;
-		}
-	}
-}
-
-@media screen and (max-width: 600px){
-	header{
-		nav{
-			>ul{
-				display: none;
-			}
-			select{
-				display: block;
-			}
-		}
-		.social{
-			display: none;
-		}
-		.search{
-			input[type="text"]{
-				width: 60px;
-				&:focus, &:active{
-					width: 100px;
 				}
 			}
 		}

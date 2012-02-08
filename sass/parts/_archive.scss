@@ -1,7 +1,7 @@
 section.archive{
 	position: relative;
 	&:first-of-type{
-		border-top: 1px solid $gray05;
+		border-top: 1px solid $light-shadow;
 		article.archive{
 			border-top: none;
 		}
@@ -13,12 +13,14 @@ section.archive{
 		}
 	}
 	&:last-of-type{
-		border-bottom: 1px solid $gray04;
+		border-bottom: 1px solid $border;
 		article.archive{
 			border-bottom: none;
 		}
 	}
 	h1.archive-title{
+		font-size: 25px;
+		font-weight: 300;
 		line-height: 35px;
 		width: 200px;
 		position: absolute;
@@ -30,28 +32,23 @@ section.archive{
 			position: absolute;
 			top: -2px;
 			width: 100%;
-			border-top: 1px solid $gray04;
+			border-top: 1px solid #ddd;
 		}
 	}
 	article.archive{
 		margin-left: 200px;
-		h1{
-			margin-bottom: 0;
-		}
 		.meta{
-			color: $gray02;
-			line-height: 2;
-			margin-top: 15px;
+			color: $font-meta;
 			span{
 				margin-right: 30px;
 				padding-left: 30px;
 				display: inline-block;
 			}
 			a{
-				color: $gray02;
+				color: $font-meta;
 				@include transition(0.3s);
 				&:hover{
-					color: $gray01;
+					color: $font-main;
 				}
 			}
 			.date{
@@ -62,28 +59,6 @@ section.archive{
 			}
 			.comments{
 				background: image-url('comments.png') 0 center no-repeat;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 600px){
-	section.archive{
-		h1.archive-title{
-			position: relative;
-			width: 100%;
-			& + article.archive{
-				border-top: none;
-				h1{
-					padding-top: 15px;
-				}
-			}
-		}
-		article.archive{
-			margin-left: 0;
-			padding: 15px 0;
-			.meta{
-				display: none;
 			}
 		}
 	}
